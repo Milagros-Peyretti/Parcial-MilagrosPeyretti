@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Parcial_MilagrosPeyretti.Models.Disciplina>
+
+@{
+    ViewData["Title"] = "ListarDisciplinas";
+}
+
+<h1>Listado por disciplinas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.NombreDisciplina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDisciplina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Parcial_MilagrosPeyretti.Models.Competidor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Registro de competidores</h1>
+
+<p>
+    <a asp-action="Create">Registrar competidor</a>
+</p>
+@if (Model.Count() > 0)
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disciplina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuidadRecidencia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disciplina.NombreDisciplina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuidadRecidencia)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
+<p>Hay @Model.Count() Competidores registrados</p>
+}
+else
+{
+<div class="alert alert-info">No hay competidores registrados </div>
+}
